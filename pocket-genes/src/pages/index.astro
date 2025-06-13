@@ -1,0 +1,112 @@
+---
+import Hero from "../layouts/Hero.astro";
+import IntroPlan from "../layouts/IntroPlan.astro";
+import Plan from "../layouts/Plan.astro";
+import MoreToCome from "../layouts/MoreToCome.astro";
+import Panels from "../layouts/Panels.astro";
+import SecondSection from "../layouts/SecondSection.astro";
+import ThirdSection from "../layouts/ThirdSection.astro";
+import IntroAboutUs from "../layouts/IntroAboutUs.astro";
+import Contact from "../layouts/Contact.astro";
+import AboutUs from "../layouts/AboutUs.astro";
+import Timeline from "../layouts/Timeline.astro";
+import ChoosePlan from "../layouts/ChoosePlan.astro";
+import Experience from "../layouts/Experience.astro";
+import IntegrationProcess from "../layouts/IntegrationProcess.astro";
+---
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pocket Genes - Explore Your DNA</title>
+</head>
+<Hero />
+<SecondSection />
+<ThirdSection />
+<Panels />
+<MoreToCome />
+<IntroPlan />
+<Plan />
+<ChoosePlan />
+<IntegrationProcess
+  subtitle="Free Program"
+  amount="$0"
+  description="Effortless integration - convert your genomic reports to our format for instant user access to interactive, intuitive panels."
+  items={[{
+    icon: "pencil.png",
+    title: "DATA INPUT FORMATTING",
+    description: "We collaborate with you to define the data structure and visual presentation, ensuring your reports are engaging and easy to explore."
+  },{
+    icon: "hammer.png",
+    title: "TEST AND LAUNCH",
+    description: "We collaborate with you to define the data structure and visual presentation, ensuring your reports are engaging and easy to explore."
+  },{
+    icon: "rotating-gear.png",
+    title: "USER ACCESS AND FEEDBACK",
+    description: "We collaborate with you to define the data structure and visual presentation, ensuring your reports are engaging and easy to explore."
+  },
+  ]}
+/>
+<IntegrationProcess
+  subtitle="Plus Program"
+  amount="$500"
+  description="The Plus Plan delivers a high level of customization, featuring branded integration, tailored data formatting, and custom features all within the app."
+  items={[{
+    icon: "pencil.png",
+    title: "COLLABORATIVE DATA INPUT",
+    description: "We collaborate with you to define the data structure and visual presentation, ensuring your reports are engaging and easy to explore."
+  },{
+    icon: "hammer.png",
+    title: "CUSTOM FEATURES",
+    description: "We collaborate with you to define the data structure and visual presentation, ensuring your reports are engaging and easy to explore."
+  },{
+    icon: "rotating-gear.png",
+    title: "ACTIVE SUPPORT AND MAINTENANCE",
+    description: "We collaborate with you to define the data structure and visual presentation, ensuring your reports are engaging and easy to explore."
+  },]}
+/>
+<IntroAboutUs />
+<Experience />
+<Timeline />
+<AboutUs />
+<Contact />
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+  }
+
+  body {
+    background: #1a36b4;
+    color: white;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+  }
+
+  /* FULL-SCREEN SECTIONS */
+  section {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10vh 10vw;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    opacity: 0.2; /* Hidden by default */
+    transform: translateY(50px); /* Move slightly down */
+    transition:
+      opacity 0.8s ease-out,
+      transform 0.8s ease-out;
+  }
+
+  section.show {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+</style>

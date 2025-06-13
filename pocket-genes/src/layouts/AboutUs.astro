@@ -1,0 +1,133 @@
+---
+import TeamCard from "../components/TeamCard.astro";
+---
+
+<div class="container">
+  <h1>Meet the Team</h1>
+  <div class="image_container">
+    <TeamCard
+      src="mobile1.png"
+      alt="Team1"
+      text="Manuel Herrera"
+      description="Description of Team Member"
+    />
+    <TeamCard
+      src="mobile1.png"
+      alt="Team1"
+      text="Federico Bustos"
+      description="Description of Team Member"
+    />
+    <TeamCard
+      src="mobile1.png"
+      alt="Team1"
+      text="Lucas Nuñez"
+      description="Description of Team Member"
+    />
+    <TeamCard
+      src="mobile1.png"
+      alt="Team1"
+      text="Matias Ezcurra"
+      description="Description of Team Member"
+    />
+  </div>
+  <div class="button_container">
+    <button>+ See the rest of the team</button>
+  </div>
+</div>
+
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 85vh;
+    background-color: #1a36b4;
+    padding: 1rem 5rem;
+  }
+
+  .image_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+  }
+
+  .button_container {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  h1 {
+    color: white;
+    font-size: 6rem;
+    margin-left: 2.5rem;
+  }
+
+  button {
+    font-size: 1.25rem;
+    background-color: #1a36b4;
+    color: white;
+    padding: 10px 2rem;
+    border: 2px solid white;
+    border-radius: 24px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .container {
+      padding: 1rem 2rem;
+      height: auto;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-left: 0;
+    }
+
+    .image_container {
+      height: auto;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    button {
+      font-size: 1rem;
+      padding: 5px 1rem;
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+      padding: 1rem 2rem;
+      height: auto;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-left: 0;
+    }
+
+    .image_container {
+      height: auto;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+  }
+
+  @media (min-width: 1025px) and (max-width: 1660px) {
+    .container {
+      padding: 1rem 2rem;
+      height: auto;
+    }
+
+    h1 {
+      font-size: 5rem;
+      margin-left: 0;
+    }
+
+    .image_container {
+      height: auto;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+  }
+</style>

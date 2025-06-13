@@ -1,0 +1,66 @@
+---
+const {time, text_1, text_2, items} = Astro.props;
+---
+<div class="container">
+    <h3 class="time">{time}</h3>
+    <div class="description">
+        <p class="description_1">{text_1}</p>
+        <p class="description_2">{text_2}</p>
+    </div>
+
+    <ul>
+        {items.map((item: string) => (
+            <li>
+                <p class="item">{item}</p>
+            </li>
+        ))}
+    </ul>
+</div>
+
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: black;
+    }
+
+    .time {
+        text-align: center;
+        color: black;
+        font-size: 2rem;
+        font-weight: normal;
+        width: 12vw;
+        padding: 1rem 5rem;
+        border: 2px solid black;
+        border-radius: 40px;
+    }
+
+    .description {
+        background-color: #1a36b4;
+        color: white;
+        font-size: 1.3rem;
+        font-weight: 700;
+        text-align: center;
+        padding: 1rem 2rem;
+        border-radius: 40px;
+    }
+
+    .item {
+        font-size: 1.3rem;
+        font-weight: bolder;
+        margin: 2rem 0;
+    }
+
+    .description_1 {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin: 0 2rem;
+    }
+
+    .description_2 {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin: 0 2rem;
+    }
+</style>

@@ -1,0 +1,300 @@
+<section class="hero">
+  <div class="hero-content">
+    <span class="tag">Golden Crow VS</span>
+    <h1>Pocket Genes</h1>
+    <p>Deliver Personalized Genomic <br />Reports to Your Users</p>
+  </div>
+  <div class="hero-images">
+    <img src="mobile1.png" alt="Pocket Genes App" class="img1" />
+    <img src="mobile2.png" alt="Pocket Genes Mobile" class="img2" />
+  </div>
+  <a href="#screen2" class="scroll-button">Explore Now ↓</a>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10vh 10vw;
+  }
+
+  .hero-content {
+    max-width: 50%;
+    position: relative;
+    transform: translateY(-50px);
+  }
+
+  /* TAG */
+  .tag {
+    background: black;
+    padding: 12px 18px; /* Slightly larger padding */
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    display: inline-block;
+    margin-bottom: 20px; /* More spacing below */
+    font-weight: 700; /* Bold */
+  }
+
+  /* TITLE */
+  .hero h1 {
+    font-size: 5.2rem; /* Slightly larger for better balance */
+    font-weight: 900; /* Extra bold */
+    margin-bottom: 30px; /* More spacing below */
+  }
+
+  /* PARAGRAPH */
+  .hero p {
+    font-size: 2rem; /* Slightly larger text */
+    margin-top: 25px; /* Increased spacing from the title */
+    opacity: 0.9;
+    line-height: 1.6; /* More readable spacing between lines */
+    font-weight: 700; /* Bold */
+  }
+
+  /* RIGHT SIDE IMAGES */
+  .hero-images {
+    position: relative;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-images img {
+    width: 300px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s ease;
+  }
+
+  .img1 {
+    position: absolute;
+    top: -50px;
+    left: 50px;
+    transform: rotate(-10deg);
+  }
+
+  .img2 {
+    position: absolute;
+    bottom: -30px;
+    right: 50px;
+    transform: rotate(10deg);
+  }
+
+  .hero-images img:hover {
+    transform: scale(1.05);
+  }
+
+  /* SCROLL BUTTON - MADE WIDER & MOVED TO THE LEFT */
+  .scroll-button {
+    position: absolute;
+    bottom: 40px; /* Places the button near the bottom */
+    left: 200px; /* Adds padding from the left */
+    padding: 15px 35px;
+    width: calc(100% + 100px); /* Made 100px wider */
+    max-width: 400px; /* Limits max width */
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    background: rgb(28, 0, 234);
+    border: 2px solid white;
+    border-radius: 30px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition:
+      background 0.3s ease,
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  /* BUTTON HOVER EFFECT */
+  .scroll-button:hover {
+    background: rgb(50, 50, 255);
+    transform: translateY(-3px);
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.7);
+  }
+
+  /* BUTTON ACTIVE (WHEN CLICKED) */
+  .scroll-button:active {
+    transform: translateY(1px);
+  }
+
+  @media screen and (max-width: 400px) {
+    .tag {
+      font-size: 14px; /* Smaller font size for mobile */
+      padding: 10px 15px; /* Adjusted padding */
+      margin-bottom: auto;
+    }
+    .hero {
+      height: 95vh;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: flex-start;
+      padding: 2.5vh 2.5vw; /* Reduced padding for mobile */
+    }
+    .hero h1 {
+      font-size: 2.5rem; /* Slightly larger for better balance */
+      margin-bottom: 16px; /* More spacing below */
+      line-height: 1.2;
+    }
+
+    /* PARAGRAPH */
+    .hero p {
+      font-size: 1.25rem; /* Slightly larger text */
+      margin-top: 10px; /* Increased spacing from the title */
+      line-height: 1.2; /* More readable spacing between lines */
+    }
+
+    .hero-images {
+      display: flex;
+      align-self: center;
+      transform: translate(0px, -50px);
+    }
+
+    .hero-images img {
+      width: 120px; /* Adjusted for smaller screens */
+    }
+
+    .img1 {
+      left: 100px;
+    }
+
+    .img2 {
+      right: 100px;
+    }
+    .scroll-button {
+      bottom: 10px; /* Places the button near the bottom */
+      left: 50px; /* Adds padding from the left */
+      padding: 5px 15px;
+      width: calc(100% + 60px); /* Made 100px wider */
+      max-width: 250px; /* Limits max width */
+      font-size: 1.4rem;
+    }
+  }
+  @media (min-width:401px) and (max-width: 580px) {
+    .tag {
+      font-size: 14px; /* Smaller font size for mobile */
+      padding: 10px 15px; /* Adjusted padding */
+      margin-bottom: auto;
+    }
+    .hero {
+      height: 95vh;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: flex-start;
+      padding: 2.5vh 2.5vw; /* Reduced padding for mobile */
+    }
+    .hero h1 {
+      font-size: 2.5rem; /* Slightly larger for better balance */
+      margin-bottom: 16px; /* More spacing below */
+      line-height: 1.2;
+    }
+
+    /* PARAGRAPH */
+    .hero p {
+      font-size: 1.25rem; /* Slightly larger text */
+      margin-top: 10px; /* Increased spacing from the title */
+      line-height: 1.2; /* More readable spacing between lines */
+    }
+
+    .hero-images {
+      display: flex;
+      align-self: center;
+      transform: translate(0px, -90px);
+    }
+
+    .hero-images img {
+      width: 160px; /* Adjusted for smaller screens */
+    }
+
+    .img1 {
+      left: 90px;
+    }
+
+    .img2 {
+      right: 120px;
+    }
+
+    .scroll-button {
+      bottom: 10px; /* Places the button near the bottom */
+      left: 50px; /* Adds padding from the left */
+      padding: 5px 15px;
+      width: calc(100% + 60px); /* Made 100px wider */
+      max-width: 250px; /* Limits max width */
+      font-size: 1.4rem;
+    }
+  }
+  @media (min-width: 581px) and (max-width: 800px) {
+    .tag {
+      font-size: 14px; /* Smaller font size for mobile */
+      padding: 10px 25px; /* Adjusted padding */
+    }
+    .hero {
+      height: 95vh;
+      padding: 2.5vh 5vw; /* Reduced padding for mobile */
+    }
+    .hero h1 {
+      font-size: 4rem; /* Slightly larger for better balance */
+      margin-bottom: 32px; /* More spacing below */
+      line-height: 1;
+    }
+
+    /* PARAGRAPH */
+    .hero p {
+      font-size: 1.75rem; /* Slightly larger text */
+      margin-top: 20px; /* Increased spacing from the title */
+      line-height: 1.6; /* More readable spacing between lines */
+    }
+
+    .hero-images {
+      display: flex;
+      align-self: center;
+    }
+
+    .hero-images img {
+      width: 225px; /* Adjusted for smaller screens */
+    }
+
+    .img1 {
+      top: 50px;
+      transform: rotate(-10deg);
+    }
+
+    .img2 {
+      bottom: 50px;
+      transform: rotate(10deg);
+    }
+    .scroll-button {
+      bottom: 10px; /* Places the button near the bottom */
+      left: 50px; /* Adds padding from the left */
+      padding: 5px 15px;
+      max-width: 300px; /* Limits max width */
+      font-size: 1.4rem;
+    }
+  }
+  @media (min-width: 801px) and (max-width: 1500px) {
+    .tag {
+      font-size: 14px; /* Smaller font size for mobile */
+      padding: 10px 25px; /* Adjusted padding */
+      margin: auto;
+    }
+    .hero {
+      height: 95vh;
+      padding: 2.5vh 5vw; /* Reduced padding for mobile */
+    }
+
+    .img1 { 
+      top: 10px;
+      transform:rotate(-10deg);
+    }
+    .img2 {
+      bottom: 10px;
+      transform: rotate(10deg);
+    }
+  }
+</style>

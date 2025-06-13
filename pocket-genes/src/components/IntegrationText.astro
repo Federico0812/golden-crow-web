@@ -1,0 +1,44 @@
+---
+const { bold_text, text, src } = Astro.props
+---
+<div>
+    <div class="text">
+        <img class="integration_image" src={src} alt=""/>
+        <p><span class="bold_text">{bold_text}</span>: {text}</p>
+    </div>
+
+</div>
+
+<style>
+    .text{
+        color: #000000;
+        font-size: 1rem;
+        line-height: 1.4;
+        max-width: 85%;
+        transition: text-shadow 0.4s ease-in-out, transform 0.4s ease-in-out;
+        display: flex;
+        align-items: center;
+    }
+
+    .bold_text{
+        font-weight: bold;
+    }
+
+    .integration_image{
+        width: 50px;
+        height: 50px;
+        margin-right: 20px;
+    }
+
+    p {
+        margin: 1rem;
+    }
+
+    @media screen and (max-width: 768px) {
+        .integration_image {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        
+    }
+</style>

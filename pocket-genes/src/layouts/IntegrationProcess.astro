@@ -1,0 +1,195 @@
+---
+const { subtitle, amount, description, items } = Astro.props;
+import Icon from "../components/Icon.astro";
+---
+
+<div class="container">
+  <div class="title_container">
+    <h1 class="title">Integration Process</h1>
+    <h2 class="subtitle">{subtitle}</h2>
+  </div>
+  <span class="line"></span>
+  <div class="pill_container">
+    
+    <div class="left">
+        <p class="amount_pill">{amount}</p>
+        <p class="description">{description}</p>
+    </div>
+    <div class="right">
+        {
+          items.map((item: object) => {
+            return <Icon title={item.title} text={item.description} />;
+          })
+        }
+      </div>
+  </div>
+  
+</div>
+
+<style>
+  .line {
+    z-index: 0;
+    width: 60vw;
+    height: 3px;
+    background-color: white;
+    position: relative;
+    transform: translate(500px, 120px); /*BAD BAD BAD*/
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    background-color: #1d1d1d;
+    height: auto;
+  }
+
+  .title {
+    color: white;
+    font-size: 5rem;
+    margin: 4rem 4rem 0 4rem;
+  }
+
+  .subtitle {
+    color: white;
+    font-size: 3rem;
+    margin: 0 4rem;
+  }
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+  }
+
+  .right {
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    margin-right: 2rem;
+  }
+
+  .amount_pill {
+    background-color: white;
+    z-index: 10;
+    color: black;
+    font-size: 4rem;
+    font-weight: 600;
+    padding: 1rem 14rem;
+    border-radius: 50px;
+    width: fit-content;
+  }
+
+  .pill_container{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .description {
+    color: white;
+    font-size: 2.25rem;
+    line-height: 2.3rem;
+    margin-top: 2rem;
+    width: 70%;
+    padding: 2rem;
+    border: 2px solid white;
+    border-radius: 20px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .title {
+      text-align: center;
+      font-size: 3rem;
+      margin: 2rem 2rem 0 2rem;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 2rem;
+      margin: 0 2rem;
+    }
+
+    .amount_pill {
+      font-size: 2.5rem;
+      padding: 1rem 7rem;
+    }
+
+    .description {
+      text-align: center;
+      font-size: 1.5rem;
+      line-height: 1.8rem;
+      margin: 1rem 2rem;
+      width: 60%;
+      padding: 1rem;
+    }
+    
+    .pill_container{
+      flex-direction: column;
+    }
+
+    .left {
+      width: auto;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    
+    .right{
+      flex-direction: column;
+    }
+    
+    .line{
+      display: none;
+      transform: translate(0px, 120px);
+    }
+    
+  }
+
+  @media (min-width: 769px) and (max-width: 1440px) {
+    .title {
+      text-align: center;
+      font-size: 3rem;
+      margin: 2rem 2rem 0 2rem;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 2rem;
+      margin: 0 2rem;
+    }
+
+    .amount_pill {
+      font-size: 2.5rem;
+      padding: 1rem 7rem;
+    }
+
+    .description {
+      text-align: center;
+      font-size: 1.5rem;
+      line-height: 1.8rem;
+      margin: 1rem 2rem;
+      width: 60%;
+      padding: 1rem;
+    }
+    
+    .pill_container{
+      flex-direction: column;
+    }
+
+    .left {
+      width: auto;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    
+    .right{
+      flex-direction: column;
+    }
+    
+    .line{
+      display: none;
+      transform: translate(0px, 120px);
+    }
+    
+  }
+</style>

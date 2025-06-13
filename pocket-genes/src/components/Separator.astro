@@ -1,0 +1,44 @@
+<div class="separator-container">
+    <span class="dot"></span>
+    <span class="shape_separator"></span>
+</div>
+
+<style>
+    :root {
+        --separator-color: gray;
+        --separator-width: 2px;
+        --dot-size: 10px;
+        --spacing: 0px;
+    }
+
+    .separator-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        margin: var(--spacing);
+        bottom: -3.25rem;
+    }
+
+    .shape_separator {
+        height: 55vh;
+        width: var(--separator-width);
+        background-color: var(--separator-color);
+        margin: var(--spacing) -var(--spacing);
+    }
+
+    .dot {
+        width: var(--dot-size);
+        height: var(--dot-size);
+        background-color: var(--separator-color);
+        border-radius: 50%;
+        position: absolute;
+        top: 0px;
+    }
+
+    @media screen and (max-width: 1440px) {
+        .separator-container {
+            display: none;
+        }
+    }
+</style>

@@ -1,0 +1,175 @@
+---
+import Card from "../components/Card.astro";
+import Item from "../components/Item.astro";
+---
+
+<section id="screen3" class="body">
+  <div class="container">
+    <h1 class="title">More to come</h1>
+    <h3 class="subtitle">
+      Pocket Genes will continuously add new panels and tools to enhance user
+      experience and genomic discovery.
+    </h3>
+    <ul>
+        <Item title="Sports & Performance" description="Customized workout plans based on strength, endurance, and recovery traits."/>
+        <Item title="Personality & Behavior" description="Genetic influences on emotions, decision-making addictions and habits."/>
+        <Item title="Physical Traits" description="Explore inherited characteristics like hair, eye color, and skin response."/>
+        <Item title="Cognitive Abilites" description="Uncover learning potential, memory, and problem-solving skills."/>
+        <Item title="Endless Exploration" description="Access extra details on traits, genetic variants, and linked studies for deeper insights."/>
+    </ul>
+  </div>
+  <div class="image-wrapper">
+    <div class="image_row">
+      <Card src="mobile3.png" alt="" text={"Sports & Performance"}/>
+      <Card src="mobile3.png" alt="" text={"Personality & Behavior"}/>
+      <Card src="mobile3.png" alt="" text={"Physical Traits"}/>
+    </div>
+    <div class="image_row">
+        <Card src="mobile3.png" alt="" text={"Cognitive & Intelligence"}/>
+        <Card src="mobile3.png" alt="" text={"Linked Variants & Studies"}/>
+        <Card src="mobile3.png" alt="" text={"Deep Genome Insights"}/>
+    </div>
+  </div>
+</section>
+
+<style>
+  .body {
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 8vh;
+    position: relative;
+    background: #f6f4ec;
+    overflow: hidden;
+  }
+
+  .container {
+    width: 30%;
+    color: #000000;
+    position: relative;
+  }
+
+  .title {
+    font-size: 5rem;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 25px;
+    margin-top: 0;
+    transition:
+      text-shadow 0.4s ease-in-out,
+      transform 0.4s ease-in-out;
+  }
+
+  .subtitle {
+    font-size: 1.75rem;
+    color: #43455c;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  .image-wrapper {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .image_row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 768px) {
+    .body {
+      flex-direction: column;
+      height: auto;
+      padding: 5vh 0;
+    }
+
+    .container {
+      width: 100%;
+      text-align: center;
+    }
+
+    .image-wrapper {
+      width: 100%;
+    }
+
+    .image_row {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .body {
+      height: auto;
+      padding: 5vh 0;
+    }
+
+    .container {
+      width: 100%;
+      text-align: center;
+    }
+
+    .image-wrapper {
+      width: auto;
+      flex-direction: row;
+    }
+
+    .image_row {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    .body {
+      height: auto;
+      padding: 5vh 0;
+    }
+
+    .container {
+      width: 100%;
+      text-align: center;
+    }
+
+    .image-wrapper {
+      flex-direction: row;
+      width: auto;
+    }
+
+    .image_row {
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+
+  @media (min-width: 1281px) and (max-width: 1600px) {
+    .body {
+      height: auto;
+      padding: 5vh 0;
+    }
+
+    .container {
+      width: 100%;
+      text-align: center;
+    }
+
+    .image-wrapper {
+      flex-direction: row;
+      width: auto;
+    }
+
+    .image_row {
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+</style>

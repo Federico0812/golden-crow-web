@@ -1,0 +1,28 @@
+---
+const { title, description } = Astro.props;
+---
+
+    <div class="container">
+        <p class="title">{title} <span>-</span> <span class="description">{description}</span></p> 
+    </div>
+
+
+<style>
+    .container {
+        display: flex;
+        margin-bottom: 1rem;
+    }
+
+    .title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 0 0 0.5rem 0;
+    }
+
+    .description {
+        font-size: 1.5rem;
+        font-weight: normal;
+        margin: 0;
+    }
+
+</style>

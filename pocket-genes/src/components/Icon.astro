@@ -1,0 +1,42 @@
+---
+const { title, text } = Astro.props;
+---
+
+<div class="container">
+  <img class="image" src="favicon.svg" alt="" />
+  <h3>{title}</h3>
+  <p>{text}</p>
+</div>
+
+<style>
+  .container {
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+  }
+
+  .image {
+    z-index: 10;
+    background-color: #1d1d1d;
+    width: 200px;
+    height: 200px;
+    border: 3px solid white;
+    border-radius: 50%;
+  }
+
+  h3 {
+    font-size: 2rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  p {
+    color: #9bbef2;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 90%;
+    margin-top: 0;
+  }
+</style>

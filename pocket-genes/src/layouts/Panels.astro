@@ -1,0 +1,131 @@
+---
+import ListItem from "../components/ListItem.astro";
+import PanelImage from "../components/PanelImage.astro"
+---
+
+<section id="screen3" class="panels_body">
+  <div class="panels_container">
+    <h1 class="panels_title">Pocket Genes Panels</h1>
+    <ul>
+      <ListItem
+        title="Health & Wellness"
+        description="Real-time insights into genetics risks and wellness traits."
+        color="#3C78D8"
+      />
+
+      <ListItem
+        title="Nutrition & Fitness"
+        description="Personalized diet and exercise recommendations."
+        color="#E06666"
+      />
+
+      <ListItem
+        title="Medication Response"
+        description="Easy-to-understand reports on how genetics affect treatments."
+        color="#6AA84F"
+      />
+
+      <ListItem
+        title="Ancestry & Traits"
+        description="Explore heritage and inherited characteristics."
+        color="#C88BAA"
+      />
+
+      <ListItem
+        title="Education & Learning"
+        description="Built-in tools to help users to understand their results."
+        color="#E69137"
+      />
+    </ul>
+  </div>
+  <div class="image-wrapper">
+    <PanelImage />
+  </div>
+</section>
+
+<style>
+  .panels_body {
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 8vh 10vw;
+    position: relative;
+    background: #f6f4ec;
+    overflow: hidden;
+  }
+
+  .panels_container {
+    color: #000000;
+    position: relative;
+  }
+
+  .panels_title {
+    font-size: 3.8vw;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 25px;
+    transition:
+      text-shadow 0.4s ease-in-out,
+      transform 0.4s ease-in-out;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0
+  }
+
+  .image-wrapper {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  @media screen and (max-width: 850px) {
+    .panels_body {
+      flex-direction: column;
+      height: auto;
+      padding: 5vh 5vw;
+    }
+
+    .panels_container {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .panels_title {
+      font-size: 6vw;
+    }
+
+    .image-wrapper {
+      width: 100%;
+    }
+  }
+  @media (min-width:851px) and (max-width: 1660px) {
+    .panels_body {
+      height: auto;
+      padding: 5vh 5vw;
+    }
+
+    .panels_container {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .panels_title {
+      font-size: 6vw;
+    }
+
+    .image-wrapper {
+      width: auto;
+    }
+  }
+</style>

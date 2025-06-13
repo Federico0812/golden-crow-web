@@ -1,0 +1,102 @@
+---
+import PlanCircle from "./PlanCircle.astro";
+
+const { title, text, subtext, description, plan, isHighlighted } = Astro.props;
+const containerClass = isHighlighted ? "container highlighted" : "container";
+---
+
+<div class={containerClass}>
+  <div>
+    <PlanCircle
+      description={description}
+      plan={plan}
+      isHighlighted={isHighlighted}
+    />
+  </div>
+  <h3>{title}</h3>
+  <p id="text">{text}</p>
+  <p id="subtext">{subtext}</p>
+</div>
+
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+  }
+
+  h3 {
+    text-align: center;
+    font-size: 2.75rem;
+    margin: 1rem 0 0 0;
+  }
+
+  #text {
+    text-align: center;
+    color: #9bbef2;
+    width: 65%;
+    font-size: 2rem;
+  }
+
+  #subtext {
+    text-align: center;
+    color: #9bbef2;
+    width: 50%;
+    font-size: 1.5rem;
+    margin-top: 0;
+  }
+
+  .highlighted {
+    transform: translate(0, -2rem);
+    background-color: #6d9eeb;
+    width: 65%;
+    padding: 2rem 0;
+    margin-left: 2rem;
+    border-radius: 50px;
+  }
+
+  .highlighted p {
+    color: white !important;
+  }
+
+  @media screen and (max-width: 768px) {
+    .container {
+      padding: 1rem 2rem;
+      height: auto;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-left: 0;
+    }
+
+    .image_container {
+      height: auto;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1300px) {
+    .container {
+      padding: 1rem 2rem;
+      height: auto;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-left: 0;
+    }
+
+    .image_container {
+      height: auto;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .highlighted {
+      padding: 1rem 0;
+    }
+  }
+</style>

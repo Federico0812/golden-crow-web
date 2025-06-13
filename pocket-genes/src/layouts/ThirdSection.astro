@@ -1,0 +1,95 @@
+---
+import ImageCard from "../components/ImageCard.astro";
+import IntegrationText from "../components/IntegrationText.astro";
+---
+
+<section id="screen3" class="integration_body">
+    <div class="text">
+        <h1 class="integration_text">Integrate with Pocket Genes</h1>
+        <IntegrationText
+            src="favicon.svg"
+            bold_text="Launch Faster"
+            text="Skip the long development process and go live quickly."
+        />
+        <IntegrationText
+            src="favicon.svg"
+            bold_text="Save Costs"
+            text="Get a powerful genomic platform at a fraction of custom app costs."
+        />
+        <IntegrationText
+            src="favicon.svg"
+            bold_text="Boost Engagement"
+            text="Interactive DNA reports increase user retention."
+        />
+        <IntegrationText
+        src="favicon.svg"
+        bold_text="Scale Easily"
+        text="We manage mobile app development, so you can focus on growing your business."
+    />
+
+    </div>
+    <div class="image-wrapper">
+        <ImageCard src="mobile3.png" alt="Pocket Genes App" />
+        <ImageCard src="mobile3.png" alt="Pocket Genes Card" />
+    </div>
+</section>
+
+<style>
+    .integration_body {
+        height: 85vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 8vh 10vw;
+        position: relative;
+        background: #f6f4ec;
+        overflow: hidden;
+    }
+
+    .text {
+        width: auto;
+        color: #000000;
+        position: relative;
+    }
+
+    .integration_text {
+        font-size: 3.8vw;
+        font-weight: bold;
+        color: #000000;
+        margin-bottom: 4rem; 
+        transition: text-shadow 0.4s ease-in-out, transform 0.4s ease-in-out;
+    }
+
+    .image-wrapper {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @media screen and (max-width: 768px) {
+        .integration_body {
+            flex-direction: column;
+            padding: 5vh 5vw;
+            height: auto;
+        }
+
+        .text {
+            width: 100%;
+            text-align: center;
+        }
+
+        .integration_text {
+            font-size: 6vw;
+            margin-bottom: 2rem; 
+        }
+
+        .image-wrapper {
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    
+</style>

@@ -1,0 +1,107 @@
+---
+import PlanCard from "../components/PlanCard.astro";
+---
+
+<div class="container">
+  <h1 id="title">Flexible Plans to Fit Your Needs</h1>
+  <div class="card_container">
+    <PlanCard
+      title="Pocket Genes Integration"
+      text="Users load their data and explore reports in our standard app interface."
+      subtext="A simple, no-cost solution for seamless integration."
+      plan="Free"
+      description="Basic Integration"
+    />
+    <PlanCard
+      title="Branded Experience"
+      text="Customize the Pocket Genes app with your branding and optimized data display."
+      subtext="A great way to enhance user experience."
+      plan="Plus"
+      description="Custom Features"
+    />
+    <PlanCard
+      title="Tailor-made Mobile App"
+      text="A fully branded, standalone app with backend support and user management."
+      subtext="The best choice for full customization."
+      plan="Full"
+      description="Mobile App Development"
+      isHighlighted=true
+    />
+  </div>
+</div>
+
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100vh;
+    padding: 0 8vw;
+    background-color: #1d1d1d;
+  }
+
+  #title {
+    color: white;
+    font-size: 5rem;
+    padding-right: 10vw;
+    margin: 0;
+  }
+
+  .card_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 5vh;
+  }
+
+  @media screen and (max-width: 768px) {
+
+    .container {
+      height: auto;
+      padding: 0 5vw;
+    }
+    .card_container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #title {
+      font-size: 3rem;
+      padding-right: 0;
+    }
+    
+  }
+
+  @media (min-width: 769px) and (max-width: 1300px) {
+    .container {
+      height: auto;
+      padding: 0 5vw;
+    }
+    .card_container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #title {
+      font-size: 3rem;
+      padding-right: 0;
+    }
+  }
+
+  @media (min-width: 1301px) and (max-width: 1600px) {
+    .container {
+      height: auto;
+      padding: 0 5vw;
+    }
+    .card_container {
+      flex-direction: row;
+    }
+
+    #title {
+      font-size: 3rem;
+      padding-right: 0;
+    }
+  }
+</style>

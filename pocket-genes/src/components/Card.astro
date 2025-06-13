@@ -1,0 +1,55 @@
+---
+const {src, alt, text} = Astro.props
+---
+
+<div class="image">            
+    <img class="image-card" src={src} alt={alt} />
+    <p class="text_card">{text}</p>
+</div>
+
+<style>
+    .image{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .image-card{
+        height: 35vh;
+        width: 35vh;
+        margin: 10px;
+        border-radius: 20px;
+    }
+
+    .text_card {
+        color: black;
+        font-size: 1.5rem;
+        text-align: center;
+        margin: 0 10px;
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+        .image-card {
+            height: 25vh;
+            width: 25vh;
+        }
+
+        .text_card {
+            font-size: 1rem;
+        }
+        
+    }
+
+    @media (min-width: 1025px) and (max-width: 1280px) {
+        .image-card {
+            height: 30vh;
+            width: 30vh;
+        }
+
+        .text_card {
+            font-size: 1rem;
+        }
+        
+    }
+
+</style>

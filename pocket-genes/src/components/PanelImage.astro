@@ -1,0 +1,165 @@
+<div class="container">
+  <div class="first_column">
+    <div class="panel first">
+      <p>Health & Wellness</p>
+    </div>
+    <div class="panel second">
+      <p>Ancestry Traits</p>
+    </div>
+  </div>
+  <div class="second_column">
+    <div class="panel third">
+      <p>Nutrition & Fitness</p>
+    </div>
+    <div class="central_panel">
+      <p>In-App Reports</p>
+    </div>
+    <div class="panel fourth">
+      <p>Community & Sharing</p>
+    </div>
+  </div>
+  <div class="third_column">
+    <div class="panel fifth">
+      <p>Medication Response</p>
+    </div>
+    <div class="panel sixth">
+      <p>Education & Learning</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .central_panel {
+    z-index: 10;
+    border: 0;
+    border-radius: 100%;
+    background-color: #1a36b4;
+    padding: 4rem 0rem;
+    margin: 1rem;
+  }
+
+  .central_panel p {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 1rem 0;
+  }
+
+  .first_column {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .second_column {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .third_column {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .panel {
+    width: 120px;
+    height: 120px;
+    z-index: 10;
+    outline-offset: 1.5rem;
+    border-radius: 100%;
+    margin: 4rem 3rem;
+    padding: 1.5rem;
+  }
+
+  .panel p {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 1.75rem 0;
+  }
+
+  .first {
+    outline: 4px dotted #6d9eeb;
+    background-color: #6d9eeb;
+  }
+
+  .second {
+    outline: 4px dotted #c27ba0;
+    background-color: #c27ba0;
+  }
+
+  .third {
+    outline: 4px dotted #e06666;
+    background-color: #e06666;
+  }
+
+  .fourth {
+    outline: 4px dotted #8e7cc3;
+    background-color: #8e7cc3;
+  }
+
+  .fifth {
+    outline: 4px dotted #93c47d;
+    background-color: #93c47d;
+  }
+
+  .sixth {
+    outline: 4px dotted #f6b26b;
+    background-color: #f6b26b;
+  }
+
+  @media screen and (max-width: 850px) {
+    .panel {
+      width: auto;
+      height: auto;
+      margin: 3rem 2rem;
+      padding: 1rem;
+      outline-offset: 1rem;
+    }
+
+    .central_panel {
+      width: auto;
+      height: auto;
+      padding: 1rem;
+    }
+    .central_panel p {
+      font-size: 1.5rem;
+    }
+
+    .panel p {
+      font-size: 1rem;
+      margin: 1.25rem 0;
+    }
+  }
+  @media (min-width: 851px) and (max-width: 1360px) {
+    .container {
+      width: auto;
+      height: auto;
+    }
+    .panel {
+      width: auto;
+      height: auto;
+      margin: 3rem 2rem;
+      padding: 1rem;
+      outline-offset: 1rem;
+    }
+
+    .central_panel {
+      width: auto;
+      height: auto;
+      padding: 1rem 0rem;
+    }
+    .central_panel p {
+      font-size: 1.5rem;
+    }
+
+    .panel p {
+      font-size: 1rem;
+      margin: 1.25rem 0;
+    }
+  }
+</style>
