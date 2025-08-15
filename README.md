@@ -3,7 +3,7 @@
 Pocket Genes is a fast, static site built with Astro that showcases our mobile genomic app.  
 This repo is organized with the Astro project inside the `pocket-genes/` subfolder and deploys automatically to **GitHub Pages**.
 
-Live site: https://federico0812.github.io/golden-crow-web/
+Live site: https://goldencrowvs.com/
 
 ---
 
