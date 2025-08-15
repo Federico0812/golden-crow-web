@@ -9,6 +9,10 @@ permissions:
   pages: write
   id-token: write
 
+defaults:
+  run:
+    working-directory: pocket-genes
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -23,7 +27,7 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Build Astro site
         run: npm run build
@@ -31,7 +35,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: pocket-genes/dist
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
