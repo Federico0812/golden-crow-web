@@ -9,12 +9,16 @@ Live site: https://federico0812.github.io/golden-crow-web/
 
 ## 🖼 Preview
 
-![Mobile 1](pocket-genes/public/mobile1.png)
-![Mobile 2](pocket-genes/public/mobile2.png)
-![About Us](pocket-genes/public/aboutus1.png)
-![Experience](pocket-genes/public/experience1.png)
-
-(If you move this README into `pocket-genes/`, change image paths from `pocket-genes/public/...` to `public/...`.)
+<p align="center">
+  <img src="pocket-genes/public/more1.png" alt="More 1" width="200" />
+  <img src="pocket-genes/public/more2.png" alt="More 2" width="200" />
+  <img src="pocket-genes/public/more3.png" alt="More 3" width="200" />
+</p>
+<p align="center">
+  <img src="pocket-genes/public/more4.png" alt="More 4" width="200" />
+  <img src="pocket-genes/public/more5.png" alt="More 5" width="200" />
+  <img src="pocket-genes/public/more6.png" alt="More 6" width="200" />
+</p>
 
 ---
 
