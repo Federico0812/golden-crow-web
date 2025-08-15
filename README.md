@@ -31,23 +31,23 @@ Live site: https://federico0812.github.io/golden-crow-web/
 
 ## 🧞 Quick Start (Local Development)
 
-1) Clone and enter the project
-    git clone https://github.com/Federico0812/golden-crow-web.git
-    cd golden-crow-web/pocket-genes
+1) Clone and enter the project  
+git clone https://github.com/Federico0812/golden-crow-web.git  
+cd golden-crow-web/pocket-genes  
 
-2) Install dependencies
-    npm install
+2) Install dependencies  
+npm install  
 
-3) Run the dev server
-    npm run dev
-    # Open http://localhost:4321
+3) Run the dev server  
+npm run dev  
+Open http://localhost:4321  
 
-4) Build for production
-    npm run build
-    # Output goes to pocket-genes/dist
+4) Build for production  
+npm run build  
+Output goes to pocket-genes/dist  
 
-5) Preview the production build
-    npm run preview
+5) Preview the production build  
+npm run preview  
 
 To stop any running server: press Ctrl + C in the terminal.
 
