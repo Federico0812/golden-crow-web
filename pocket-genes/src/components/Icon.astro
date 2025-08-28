@@ -1,9 +1,9 @@
 ---
-const { title, text } = Astro.props;
+const { icon, title, text } = Astro.props;
 ---
 
 <div class="container">
-  <img class="image" src="favicon.svg" alt="" />
+  <img class="image" src={icon || "favicon.svg"} alt="" />
   <h3>{title}</h3>
   <p>{text}</p>
 </div>
