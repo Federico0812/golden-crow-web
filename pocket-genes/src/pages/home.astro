@@ -15,7 +15,8 @@
   <nav class="main-nav">
     <div class="nav-container">
       <div class="logo">
-        <img src="/logo.png" alt="Golden Crow Logo" />
+        <img src="/favicon.svg" alt="Golden Crow Logo" />
+        <span class="logo-text">Golden Crow</span>
       </div>
       <div class="nav-links">
         <a href="/" class="nav-link active">Home</a>
@@ -90,7 +91,8 @@
       <div class="footer-content">
         <div class="footer-brand">
           <div class="logo">
-            <img src="/logo.png" alt="Golden Crow Logo" />
+            <img src="/favicon.svg" alt="Golden Crow Logo" />
+            <span class="logo-text">Golden Crow</span>
           </div>
           <p>Pioneering the future of genomic innovation.</p>
         </div>
@@ -183,11 +185,8 @@
   }
 
   .logo img {
-    height: 40px;
-    width: auto;
-    max-width: 120px;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-    border-radius: 4px;
+    width: 32px;
+    height: 32px;
   }
 
   .logo-text {
@@ -513,15 +512,11 @@
 
   @media (max-width: 768px) {
     .nav-links {
-      gap: 0.75rem;
+      gap: 1rem;
     }
     
     .nav-container {
       padding: 1rem;
-    }
-    
-    .nav-link {
-      font-size: 0.9rem;
     }
     
     .hero-actions {
@@ -543,25 +538,6 @@
     
     .footer-links {
       justify-content: center;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .nav-links {
-      gap: 0.5rem;
-    }
-    
-    .nav-link {
-      font-size: 0.8rem;
-    }
-    
-    .logo-text {
-      font-size: 1rem;
-    }
-    
-    .logo img {
-      height: 32px;
-      max-width: 100px;
     }
   }
 </style>
