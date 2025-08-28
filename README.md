@@ -1,24 +1,6 @@
-# 🌌 Golden Crow Web — Pocket Genes (Astro)
-
-Pocket Genes is a fast, static site built with Astro that showcases our mobile genomic app.  
-This repo is organized with the Astro project inside the `pocket-genes/` subfolder and deploys automatically to **GitHub Pages**.
+# 🌌 Golden Crow Website
 
 Live site: https://goldencrowvs.com/
-
----
-
-## 🖼 Preview
-
-<p align="center">
-  <img src="pocket-genes/public/more1.png" alt="More 1" width="200" />
-  <img src="pocket-genes/public/more2.png" alt="More 2" width="200" />
-  <img src="pocket-genes/public/more3.png" alt="More 3" width="200" />
-</p>
-<p align="center">
-  <img src="pocket-genes/public/more4.png" alt="More 4" width="200" />
-  <img src="pocket-genes/public/more5.png" alt="More 5" width="200" />
-  <img src="pocket-genes/public/more6.png" alt="More 6" width="200" />
-</p>
 
 ---
 
@@ -50,35 +32,6 @@ Output goes to pocket-genes/dist
 npm run preview  
 
 To stop any running server: press Ctrl + C in the terminal.
-
----
-
-## 📂 Project Structure (inside pocket-genes/)
-
-    pocket-genes/
-    ├─ public/                 # Static files copied to the site root
-    │  ├─ mobile1.png
-    │  ├─ mobile2.png
-    │  ├─ aboutus1.png
-    │  ├─ experience1.png
-    │  └─ favicon.svg
-    ├─ src/
-    │  ├─ layouts/
-    │  │  ├─ Hero.astro
-    │  │  ├─ AboutUs.astro
-    │  │  └─ Experience.astro
-    │  └─ pages/
-    │     └─ index.astro
-    ├─ astro.config.mjs
-    ├─ package.json
-    └─ tsconfig.json
-
-Notes:
-- Files in `public/` are served from the site root; reference them as `/mobile1.png` or `mobile1.png` in `.astro` files.
-- Main image references currently live in:
-  - `src/layouts/Hero.astro`
-  - `src/layouts/AboutUs.astro` (multiple)
-  - `src/layouts/Experience.astro` (via ExperienceCard)
 
 ---
 
