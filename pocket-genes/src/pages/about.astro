@@ -1,5 +1,5 @@
 ---
-// About page
+import AboutUs from "../layouts/AboutUs.astro";
 ---
 
 <html>
@@ -52,6 +52,10 @@
         </div>
       </div>
     </section>
+
+    <section class="team-section">
+      <AboutUs />
+    </section>
   </main>
 </body>
 </html>
@@ -61,12 +65,19 @@
     --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
     --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --success-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    --warning-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    
     --dark-bg: #0a0e27;
     --dark-surface: #1a1f3a;
     --dark-elevated: #2d3561;
     --text-primary: #ffffff;
     --text-secondary: #b8c5d1;
     --text-accent: #64b5f6;
+    
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   }
 
   * {
@@ -215,6 +226,11 @@
   .about-item p {
     color: var(--text-secondary);
     line-height: 1.6;
+  }
+
+  .team-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, var(--dark-surface) 0%, var(--dark-elevated) 100%);
   }
 
   @media (max-width: 768px) {
