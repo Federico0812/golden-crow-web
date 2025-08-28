@@ -183,25 +183,38 @@ import TeamCard from "../components/TeamCard.astro";
 
     .image_container {
       gap: 1.5rem;
+      justify-content: center;
     }
   }
 
   @media (max-width: 768px) {
     .container {
-      padding: 3rem 4%;
+      padding: 2rem 4%;
+      min-height: auto;
     }
 
     .section-header {
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .team-title {
+      font-size: clamp(2.5rem, 8vw, 4rem);
+    }
+
+    .team-subtitle {
+      font-size: clamp(1rem, 4vw, 1.2rem);
     }
 
     .image_container {
       flex-direction: column;
-      gap: 2rem;
+      gap: 1.5rem;
+      align-items: center;
+      width: 100%;
     }
 
     .orb-1, .orb-2, .orb-3 {
-      opacity: 0.3;
+      opacity: 0.2;
+      filter: blur(40px);
     }
 
     .dna-pattern {
@@ -211,11 +224,46 @@ import TeamCard from "../components/TeamCard.astro";
 
   @media (max-width: 480px) {
     .container {
-      padding: 2rem 4%;
+      padding: 1.5rem 3%;
+    }
+
+    .section-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .team-title {
+      font-size: clamp(2rem, 10vw, 3rem);
+      margin-bottom: 0.75rem;
+    }
+
+    .team-subtitle {
+      font-size: clamp(0.9rem, 4.5vw, 1rem);
     }
 
     .image_container {
-      gap: 1.5rem;
+      gap: 1.25rem;
+    }
+
+    .orb-1, .orb-2, .orb-3 {
+      opacity: 0.1;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .container {
+      padding: 1rem 2%;
+    }
+
+    .team-title {
+      font-size: 2rem;
+    }
+
+    .team-subtitle {
+      font-size: 0.875rem;
+    }
+
+    .image_container {
+      gap: 1rem;
     }
   }
 </style>

@@ -4,78 +4,181 @@ import Item from "../components/Item.astro";
 ---
 
 <section id="screen3" class="body">
-  <div class="container">
-    <h1 class="title">More to come</h1>
-    <h3 class="subtitle">
-      Pocket Genes will continuously add new panels and tools to enhance user
-      experience and genomic discovery.
-    </h3>
-    <ul>
+  <div class="more-bg-effects">
+    <div class="floating-orb orb-1"></div>
+    <div class="floating-orb orb-2"></div>
+    <div class="floating-orb orb-3"></div>
+    <div class="genetic-spiral"></div>
+  </div>
+  <div class="content-wrapper">
+    <div class="container">
+      <h1 class="title">
+        <span class="title-accent">More</span> 
+        <span class="title-main">to Come</span>
+      </h1>
+      <h3 class="subtitle">
+        Pocket Genes will continuously add new panels and tools to enhance user
+        experience and genomic discovery.
+      </h3>
+      <div class="features-list">
         <Item title="Sports & Performance" description="Customized workout plans based on strength, endurance, and recovery traits."/>
         <Item title="Personality & Behavior" description="Genetic influences on emotions, decision-making addictions and habits."/>
         <Item title="Physical Traits" description="Explore inherited characteristics like hair, eye color, and skin response."/>
-        <Item title="Cognitive Abilites" description="Uncover learning potential, memory, and problem-solving skills."/>
+        <Item title="Cognitive Abilities" description="Uncover learning potential, memory, and problem-solving skills."/>
         <Item title="Endless Exploration" description="Access extra details on traits, genetic variants, and linked studies for deeper insights."/>
-    </ul>
-  </div>
-  <div class="image-wrapper">
-    <div class="image_row">
-      <Card src="more1.png" alt="" text={"Sports & Performance"}/>
-      <Card src="more2.png" alt="" text={"Personality & Behavior"}/>
-      <Card src="more3.png" alt="" text={"Physical Traits"}/>
+      </div>
     </div>
-    <div class="image_row">
-        <Card src="more4.png" alt="" text={"Cognitive & Intelligence"}/>
-        <Card src="more5.png" alt="" text={"Linked Variants & Studies"}/>
-        <Card src="more6.png" alt="" text={"Deep Genome Insights"}/>
+    <div class="image-wrapper">
+      <div class="image_row">
+        <Card src="more1.png" alt="" text={"Sports & Performance"}/>
+        <Card src="more2.png" alt="" text={"Personality & Behavior"}/>
+        <Card src="more3.png" alt="" text={"Physical Traits"}/>
+      </div>
+      <div class="image_row">
+          <Card src="more4.png" alt="" text={"Cognitive & Intelligence"}/>
+          <Card src="more5.png" alt="" text={"Linked Variants & Studies"}/>
+          <Card src="more6.png" alt="" text={"Deep Genome Insights"}/>
+      </div>
     </div>
   </div>
 </section>
 
 <style>
   .body {
+    position: relative;
     min-height: 100vh;
+    background: linear-gradient(135deg, var(--dark-surface) 0%, var(--dark-elevated) 100%);
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(240, 147, 251, 0.12) 0%, transparent 60%),
+      radial-gradient(circle at 75% 75%, rgba(103, 126, 234, 0.15) 0%, transparent 60%),
+      radial-gradient(circle at 50% 10%, rgba(79, 172, 254, 0.08) 0%, transparent 70%);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 5rem 5%;
+  }
+
+  /* Background Effects */
+  .more-bg-effects {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .floating-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.4;
+    animation: floating 28s ease-in-out infinite;
+  }
+
+  .orb-1 {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, rgba(240, 147, 251, 0.25) 0%, rgba(103, 126, 234, 0.2) 100%);
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+  }
+
+  .orb-2 {
+    width: 220px;
+    height: 220px;
+    background: linear-gradient(135deg, rgba(103, 126, 234, 0.2) 0%, rgba(79, 172, 254, 0.18) 100%);
+    bottom: 15%;
+    right: 12%;
+    animation-delay: -8s;
+  }
+
+  .orb-3 {
+    width: 160px;
+    height: 160px;
+    background: linear-gradient(135deg, rgba(79, 172, 254, 0.25) 0%, rgba(240, 147, 251, 0.15) 100%);
+    top: 60%;
+    left: 80%;
+    animation-delay: -18s;
+  }
+
+  .genetic-spiral {
+    position: absolute;
+    top: 20%;
+    right: 8%;
+    width: 100px;
+    height: 250px;
+    opacity: 0.05;
+    background-image: 
+      conic-gradient(from 0deg, transparent 340deg, rgba(255, 255, 255, 0.3) 360deg);
+    border-radius: 50%;
+    animation: spiralRotate 15s linear infinite;
+  }
+
+  @keyframes floating {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-40px) rotate(90deg); }
+    50% { transform: translateY(25px) rotate(180deg); }
+    75% { transform: translateY(-20px) rotate(270deg); }
+  }
+
+  @keyframes spiralRotate {
+    from { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.1); }
+    to { transform: rotate(360deg) scale(1); }
+  }
+
+  .content-wrapper {
+    position: relative;
+    z-index: 2;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 5rem 5%;
-    position: relative;
-    background: var(--dark-bg);
-    background-image: 
-      radial-gradient(circle at 30% 30%, rgba(79, 172, 254, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 70% 70%, rgba(240, 147, 251, 0.1) 0%, transparent 50%);
+    gap: 5rem;
   }
 
   .container {
     flex: 1;
-    max-width: 40%;
-    color: var(--text-primary);
+    max-width: 45%;
     position: relative;
-    z-index: 2;
   }
 
   .title {
     font-size: clamp(3rem, 6vw, 5rem);
     font-weight: 800;
-    background: var(--primary-gradient);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 1.5rem;
-    margin-top: 0;
+    margin: 0 0 1.5rem 0;
     line-height: 1.2;
   }
 
-  .subtitle {
-    font-size: clamp(1.1rem, 2.5vw, 1.75rem);
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: 2rem;
+  .title-accent {
+    display: inline;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-right: 0.5rem;
   }
 
-  ul {
-    padding: 0;
-    margin: 0;
+  .title-main {
+    display: inline;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .subtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0 0 3rem 0;
+    font-weight: 400;
+  }
+
+  .features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   .image-wrapper {
@@ -87,6 +190,8 @@ import Item from "../components/Item.astro";
     gap: 1.5rem;
     position: relative;
     z-index: 2;
+    max-width: 50%;
+    min-width: 400px;
   }
 
   .image_row {
@@ -99,9 +204,8 @@ import Item from "../components/Item.astro";
 
   /* Responsive Design */
   @media (max-width: 1200px) {
-    .body {
+    .content-wrapper {
       flex-direction: column;
-      padding: 4rem 5%;
       gap: 4rem;
       text-align: center;
     }
@@ -111,18 +215,34 @@ import Item from "../components/Item.astro";
     }
 
     .image-wrapper {
+      max-width: 100%;
+      min-width: unset;
       gap: 2rem;
     }
 
     .image_row {
       flex-wrap: wrap;
       gap: 1.5rem;
+      justify-content: center;
+    }
+  }
+
+  @media (min-width: 1201px) {
+    .content-wrapper {
+      align-items: flex-start;
+    }
+
+    .container {
+      padding-right: 2rem;
     }
   }
 
   @media (max-width: 768px) {
     .body {
       padding: 3rem 4%;
+    }
+
+    .content-wrapper {
       gap: 3rem;
     }
 
@@ -131,16 +251,31 @@ import Item from "../components/Item.astro";
       align-items: center;
       gap: 1.5rem;
     }
+
+    .orb-1, .orb-2, .orb-3 {
+      opacity: 0.25;
+    }
+
+    .genetic-spiral {
+      display: none;
+    }
   }
 
   @media (max-width: 480px) {
     .body {
       padding: 2rem 4%;
+    }
+
+    .content-wrapper {
       gap: 2rem;
     }
 
     .image-wrapper {
       gap: 1.5rem;
+    }
+
+    .orb-1, .orb-2, .orb-3 {
+      opacity: 0.15;
     }
   }
 </style>
