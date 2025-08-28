@@ -33,6 +33,11 @@ import IntegrationProcess from "../layouts/IntegrationProcess.astro";
       <div class="logo">
         <img src="/logo1024.png" alt="Golden Crow VS Logo" />
       </div>
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
       <div class="nav-links">
         <a href="/" class="nav-link">Home</a>
         <a href="/about" class="nav-link">About Us</a>
@@ -143,7 +148,9 @@ import IntegrationProcess from "../layouts/IntegrationProcess.astro";
   }
 
   html {
+    font-size: 16px;
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
@@ -158,6 +165,7 @@ import IntegrationProcess from "../layouts/IntegrationProcess.astro";
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    min-width: 320px;
   }
 
   .main-nav {
@@ -174,7 +182,7 @@ import IntegrationProcess from "../layouts/IntegrationProcess.astro";
   .nav-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: clamp(0.75rem, 2vw, 1rem) clamp(1rem, 4vw, 2rem);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -184,18 +192,19 @@ import IntegrationProcess from "../layouts/IntegrationProcess.astro";
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    flex-shrink: 0;
   }
 
   .logo img {
-    height: 40px;
+    height: clamp(32px, 5vw, 40px);
     width: auto;
-    max-width: 120px;
+    max-width: clamp(80px, 15vw, 120px);
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
     border-radius: 4px;
   }
 
   .logo-text {
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
     font-weight: 700;
     background: var(--accent-gradient);
     background-clip: text;
@@ -203,9 +212,40 @@ import IntegrationProcess from "../layouts/IntegrationProcess.astro";
     -webkit-text-fill-color: transparent;
   }
 
+  .mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+  }
+
+  .hamburger-line {
+    width: 24px;
+    height: 2px;
+    background: var(--text-primary);
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
+
+  .mobile-menu-toggle.active .hamburger-line:first-child {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+
+  .mobile-menu-toggle.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-menu-toggle.active .hamburger-line:last-child {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
   .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: clamp(0.5rem, 3vw, 2rem);
+    flex-wrap: wrap;
   }
 
   .nav-link {
@@ -214,6 +254,8 @@ import IntegrationProcess from "../layouts/IntegrationProcess.astro";
     font-weight: 500;
     transition: all 0.3s ease;
     position: relative;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    white-space: nowrap;
   }
 
   .nav-link:hover,
@@ -233,7 +275,7 @@ import IntegrationProcess from "../layouts/IntegrationProcess.astro";
   }
 
   .pocket-genes-page {
-    margin-top: 80px;
+    margin-top: clamp(60px, 10vw, 80px);
   }
 
   /* Contact CTA Section */
@@ -372,57 +414,154 @@ import IntegrationProcess from "../layouts/IntegrationProcess.astro";
   }
 
   @media (max-width: 768px) {
-    .nav-links {
-      gap: 0.75rem;
+    .mobile-menu-toggle {
+      display: flex;
     }
     
-    .nav-container {
+    .nav-links {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: rgba(26, 31, 58, 0.95);
+      backdrop-filter: blur(20px);
+      flex-direction: column;
       padding: 1rem;
+      box-shadow: var(--glass-shadow);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 999;
+    }
+    
+    .nav-links.active {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
     }
     
     .nav-link {
-      font-size: 0.9rem;
+      font-size: 1rem;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-link:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-link.active::after {
+      display: none;
     }
 
     .contact-cta-section {
-      padding: 4rem 0;
+      padding: clamp(3rem, 6vw, 4rem) 0;
     }
 
     .contact-cta-container {
-      padding: 0 1.5rem;
+      padding: 0 clamp(1rem, 3vw, 1.5rem);
     }
 
     .contact-cta-button {
-      padding: 1rem 2.5rem;
-      font-size: 1rem;
+      padding: clamp(1rem, 2vw, 1rem) clamp(2rem, 4vw, 2.5rem);
+      font-size: clamp(0.95rem, 2vw, 1rem);
     }
   }
 
   @media (max-width: 480px) {
-    .nav-links {
-      gap: 0.5rem;
-    }
-    
-    .nav-link {
-      font-size: 0.8rem;
-    }
-    
-    .logo img {
-      height: 32px;
-      max-width: 100px;
-    }
-
     .contact-cta-section {
-      padding: 3rem 0;
+      padding: clamp(2rem, 4vw, 3rem) 0;
     }
 
     .contact-cta-container {
-      padding: 0 1rem;
+      padding: 0 clamp(1rem, 3vw, 1rem);
     }
 
     .contact-cta-button {
-      padding: 0.875rem 2rem;
-      font-size: 0.95rem;
+      padding: clamp(0.875rem, 2vw, 0.875rem) clamp(1.5rem, 4vw, 2rem);
+      font-size: clamp(0.9rem, 2vw, 0.95rem);
+    }
+  }
+
+  /* Large screen optimization */
+  @media (min-width: 1400px) {
+    .nav-container {
+      max-width: 1400px;
+    }
+    
+    .contact-cta-container {
+      max-width: 900px;
+    }
+  }
+
+  /* High zoom compatibility */
+  @media (max-width: 1024px) {
+    .contact-cta-section {
+      padding: clamp(3rem, 5vw, 5rem) 0;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .mobile-menu-toggle {
+      display: flex;
+    }
+    
+    .nav-links {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: rgba(26, 31, 58, 0.95);
+      backdrop-filter: blur(20px);
+      flex-direction: column;
+      padding: 1rem;
+      box-shadow: var(--glass-shadow);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 999;
+    }
+    
+    .nav-links.active {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
     }
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (mobileMenuToggle && navLinks) {
+      mobileMenuToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+        mobileMenuToggle.classList.toggle('active');
+      });
+      
+      // Close menu when clicking on a link
+      const navLinksElements = navLinks.querySelectorAll('.nav-link');
+      navLinksElements.forEach(link => {
+        link.addEventListener('click', function() {
+          navLinks.classList.remove('active');
+          mobileMenuToggle.classList.remove('active');
+        });
+      });
+      
+      // Close menu when clicking outside
+      document.addEventListener('click', function(event) {
+        if (!mobileMenuToggle.contains(event.target) && !navLinks.contains(event.target)) {
+          navLinks.classList.remove('active');
+          mobileMenuToggle.classList.remove('active');
+        }
+      });
+    }
+  });
+</script>
