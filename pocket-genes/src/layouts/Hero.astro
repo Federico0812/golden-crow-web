@@ -1,300 +1,425 @@
 <section class="hero">
+  <div class="hero-bg-effects">
+    <div class="dna-helix"></div>
+    <div class="floating-particles"></div>
+  </div>
   <div class="hero-content">
-    <span class="tag">Golden Crow VS</span>
-    <h1>Pocket Genes</h1>
-    <p>Deliver Personalized Genomic <br />Reports to Your Users</p>
+    <span class="tag">
+      <span class="tag-icon">🧬</span>
+      Golden Crow VS
+    </span>
+    <h1 class="hero-title">
+      <span class="title-main">Pocket Genes</span>
+      <span class="title-sub">DNA Made Simple</span>
+    </h1>
+    <p class="hero-description">
+      Transform complex genomic data into 
+      <span class="highlight">beautiful, interactive reports</span> 
+      that your users will love to explore
+    </p>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-number">24/7</span>
+        <span class="stat-label">Support</span>
+      </div>
+    </div>
   </div>
   <div class="hero-images">
     <img src="mobile1.png" alt="Pocket Genes App" class="img1" />
     <img src="mobile2.png" alt="Pocket Genes Mobile" class="img2" />
+    <div class="image-glow img1-glow"></div>
+    <div class="image-glow img2-glow"></div>
   </div>
-  <a href="#screen2" class="scroll-button">Explore Now ↓</a>
+  <a href="#screen2" class="scroll-button">
+    <span>Explore Platform</span>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 4L12 20M12 20L18 14M12 20L6 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
 </section>
 
 <style>
   .hero {
     position: relative;
-    height: 80vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10vh 10vw;
+    padding: 2rem 5%;
+    background: var(--dark-bg);
+    background-image: 
+      radial-gradient(circle at 20% 20%, rgba(103, 126, 234, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.1) 0%, transparent 50%);
+    overflow: hidden;
   }
 
+  /* Background Effects */
+  .hero-bg-effects {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .dna-helix {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    width: 200px;
+    height: 400px;
+    opacity: 0.1;
+    background: linear-gradient(45deg, var(--primary-gradient));
+    border-radius: 50%;
+    animation: rotate 20s linear infinite;
+  }
+
+  .floating-particles {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(2px 2px at 20px 30px, #667eea, transparent),
+      radial-gradient(2px 2px at 40px 70px, #764ba2, transparent),
+      radial-gradient(1px 1px at 90px 40px, #4facfe, transparent);
+    background-repeat: repeat;
+    background-size: 100px 80px;
+    animation: float 15s linear infinite;
+    opacity: 0.3;
+  }
+
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes float {
+    from { background-position: 0 0, 0 0, 0 0; }
+    to { background-position: 100px 0, -100px 0, 50px 0; }
+  }
+
+  /* Hero Content */
   .hero-content {
+    flex: 1;
     max-width: 50%;
     position: relative;
-    transform: translateY(-50px);
+    z-index: 2;
+    padding-right: 2rem;
   }
 
-  /* TAG */
   .tag {
-    background: black;
-    padding: 12px 18px; /* Slightly larger padding */
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 16px;
-    display: inline-block;
-    margin-bottom: 20px; /* More spacing below */
-    font-weight: 700; /* Bold */
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    box-shadow: var(--glass-shadow);
+    transition: all 0.3s ease;
   }
 
-  /* TITLE */
-  .hero h1 {
-    font-size: 5.2rem; /* Slightly larger for better balance */
-    font-weight: 900; /* Extra bold */
-    margin-bottom: 30px; /* More spacing below */
+  .tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.5);
   }
 
-  /* PARAGRAPH */
-  .hero p {
-    font-size: 2rem; /* Slightly larger text */
-    margin-top: 25px; /* Increased spacing from the title */
-    opacity: 0.9;
-    line-height: 1.6; /* More readable spacing between lines */
-    font-weight: 700; /* Bold */
+  .tag-icon {
+    font-size: 1.2em;
+    animation: pulse 2s infinite;
   }
 
-  /* RIGHT SIDE IMAGES */
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  .hero-title {
+    margin-bottom: 1.5rem;
+  }
+
+  .title-main {
+    display: block;
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    background: var(--primary-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+
+  .title-sub {
+    display: block;
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-weight: 300;
+    color: var(--text-secondary);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .hero-description {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    max-width: 90%;
+  }
+
+  .highlight {
+    background: var(--accent-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    background: var(--success-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .stat-label {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+    font-weight: 500;
+  }
+
+  /* Hero Images */
   .hero-images {
+    flex: 1;
     position: relative;
-    width: 50%;
+    height: 600px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    z-index: 2;
   }
 
   .hero-images img {
-    width: 300px;
-    border-radius: 20px;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
-    transition: transform 0.5s ease;
+    width: 280px;
+    border-radius: 24px;
+    box-shadow: 
+      0 25px 50px -12px rgba(0, 0, 0, 0.5),
+      0 0 0 1px rgba(255, 255, 255, 0.1);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    position: absolute;
   }
 
   .img1 {
-    position: absolute;
     top: -50px;
     left: 50px;
-    transform: rotate(-10deg);
+    transform: rotate(-8deg) scale(0.95);
+    z-index: 1;
   }
 
   .img2 {
-    position: absolute;
-    bottom: -30px;
+    bottom: -50px;
     right: 50px;
-    transform: rotate(10deg);
+    transform: rotate(8deg);
+    z-index: 2;
   }
 
   .hero-images img:hover {
-    transform: scale(1.05);
+    transform: rotate(0deg) scale(1.05);
+    box-shadow: 
+      0 35px 70px -12px rgba(103, 126, 234, 0.4),
+      0 0 0 1px rgba(255, 255, 255, 0.2);
   }
 
-  /* SCROLL BUTTON - MADE WIDER & MOVED TO THE LEFT */
+  .image-glow {
+    position: absolute;
+    width: 280px;
+    height: 498px;
+    border-radius: 24px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+  }
+
+  .img1-glow {
+    top: -50px;
+    left: 50px;
+    background: var(--primary-gradient);
+    filter: blur(20px);
+    z-index: 0;
+  }
+
+  .img2-glow {
+    bottom: -50px;
+    right: 50px;
+    background: var(--accent-gradient);
+    filter: blur(20px);
+    z-index: 1;
+  }
+
+  .hero-images:hover .image-glow {
+    opacity: 0.3;
+  }
+
+  /* Scroll Button */
   .scroll-button {
     position: absolute;
-    bottom: 40px; /* Places the button near the bottom */
-    left: 200px; /* Adds padding from the left */
-    padding: 15px 35px;
-    width: calc(100% + 100px); /* Made 100px wider */
-    max-width: 400px; /* Limits max width */
-    font-size: 1.4rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: white;
-    background: rgb(28, 0, 234);
-    border: 2px solid white;
-    border-radius: 30px;
-    cursor: pointer;
-    text-align: center;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 3rem;
+    color: var(--text-primary);
     text-decoration: none;
-    transition:
-      background 0.3s ease,
-      transform 0.3s ease,
-      box-shadow 0.3s ease;
+    font-weight: 500;
+    font-size: 1rem;
+    box-shadow: var(--glass-shadow);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 10;
   }
 
-  /* BUTTON HOVER EFFECT */
   .scroll-button:hover {
-    background: rgb(50, 50, 255);
-    transform: translateY(-3px);
-    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.7);
+    transform: translateX(-50%) translateY(-4px);
+    box-shadow: 0 20px 40px 0 rgba(31, 38, 135, 0.6);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
   }
 
-  /* BUTTON ACTIVE (WHEN CLICKED) */
-  .scroll-button:active {
-    transform: translateY(1px);
+  .scroll-button svg {
+    transition: transform 0.3s ease;
   }
 
-  @media screen and (max-width: 400px) {
-    .tag {
-      font-size: 14px; /* Smaller font size for mobile */
-      padding: 10px 15px; /* Adjusted padding */
-      margin-bottom: auto;
-    }
+  .scroll-button:hover svg {
+    transform: translateY(4px);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1024px) {
     .hero {
-      height: 95vh;
       flex-direction: column;
-      justify-content: space-around;
-      align-items: flex-start;
-      padding: 2.5vh 2.5vw; /* Reduced padding for mobile */
-    }
-    .hero h1 {
-      font-size: 2.5rem; /* Slightly larger for better balance */
-      margin-bottom: 16px; /* More spacing below */
-      line-height: 1.2;
+      text-align: center;
+      padding: 2rem 5%;
+      gap: 3rem;
     }
 
-    /* PARAGRAPH */
-    .hero p {
-      font-size: 1.25rem; /* Slightly larger text */
-      margin-top: 10px; /* Increased spacing from the title */
-      line-height: 1.2; /* More readable spacing between lines */
+    .hero-content {
+      max-width: 100%;
+      padding-right: 0;
+    }
+
+    .hero-stats {
+      justify-content: center;
+      gap: 3rem;
     }
 
     .hero-images {
-      display: flex;
-      align-self: center;
-      transform: translate(0px, -50px);
+      height: 400px;
     }
 
     .hero-images img {
-      width: 120px; /* Adjusted for smaller screens */
+      width: 240px;
     }
 
     .img1 {
-      left: 100px;
+      left: 20px;
+      top: 0;
     }
 
     .img2 {
-      right: 100px;
-    }
-    .scroll-button {
-      bottom: 10px; /* Places the button near the bottom */
-      left: 50px; /* Adds padding from the left */
-      padding: 5px 15px;
-      width: calc(100% + 60px); /* Made 100px wider */
-      max-width: 250px; /* Limits max width */
-      font-size: 1.4rem;
+      right: 20px;
+      bottom: 0;
     }
   }
-  @media (min-width:401px) and (max-width: 580px) {
-    .tag {
-      font-size: 14px; /* Smaller font size for mobile */
-      padding: 10px 15px; /* Adjusted padding */
-      margin-bottom: auto;
-    }
+
+  @media (max-width: 768px) {
     .hero {
-      height: 95vh;
+      padding: 1rem 4%;
+      gap: 2rem;
+    }
+
+    .hero-description {
+      max-width: 100%;
+    }
+
+    .hero-stats {
+      flex-direction: row;
+      gap: 2rem;
+    }
+
+    .stat-number {
+      font-size: 1.5rem;
+    }
+
+    .hero-images {
+      height: 300px;
+    }
+
+    .hero-images img {
+      width: 180px;
+    }
+
+    .image-glow {
+      width: 180px;
+      height: 320px;
+    }
+
+    .img1 {
+      left: 10px;
+      transform: rotate(-5deg) scale(0.95);
+    }
+
+    .img2 {
+      right: 10px;
+      transform: rotate(5deg);
+    }
+
+    .scroll-button {
+      bottom: 1rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 0.875rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-stats {
       flex-direction: column;
-      justify-content: space-around;
-      align-items: flex-start;
-      padding: 2.5vh 2.5vw; /* Reduced padding for mobile */
-    }
-    .hero h1 {
-      font-size: 2.5rem; /* Slightly larger for better balance */
-      margin-bottom: 16px; /* More spacing below */
-      line-height: 1.2;
-    }
-
-    /* PARAGRAPH */
-    .hero p {
-      font-size: 1.25rem; /* Slightly larger text */
-      margin-top: 10px; /* Increased spacing from the title */
-      line-height: 1.2; /* More readable spacing between lines */
+      gap: 1rem;
     }
 
     .hero-images {
-      display: flex;
-      align-self: center;
-      transform: translate(0px, -90px);
+      height: 250px;
     }
 
     .hero-images img {
-      width: 160px; /* Adjusted for smaller screens */
+      width: 140px;
     }
 
-    .img1 {
-      left: 90px;
-    }
-
-    .img2 {
-      right: 120px;
-    }
-
-    .scroll-button {
-      bottom: 10px; /* Places the button near the bottom */
-      left: 50px; /* Adds padding from the left */
-      padding: 5px 15px;
-      width: calc(100% + 60px); /* Made 100px wider */
-      max-width: 250px; /* Limits max width */
-      font-size: 1.4rem;
-    }
-  }
-  @media (min-width: 581px) and (max-width: 800px) {
-    .tag {
-      font-size: 14px; /* Smaller font size for mobile */
-      padding: 10px 25px; /* Adjusted padding */
-    }
-    .hero {
-      height: 95vh;
-      padding: 2.5vh 5vw; /* Reduced padding for mobile */
-    }
-    .hero h1 {
-      font-size: 4rem; /* Slightly larger for better balance */
-      margin-bottom: 32px; /* More spacing below */
-      line-height: 1;
-    }
-
-    /* PARAGRAPH */
-    .hero p {
-      font-size: 1.75rem; /* Slightly larger text */
-      margin-top: 20px; /* Increased spacing from the title */
-      line-height: 1.6; /* More readable spacing between lines */
-    }
-
-    .hero-images {
-      display: flex;
-      align-self: center;
-    }
-
-    .hero-images img {
-      width: 225px; /* Adjusted for smaller screens */
-    }
-
-    .img1 {
-      top: 50px;
-      transform: rotate(-10deg);
-    }
-
-    .img2 {
-      bottom: 50px;
-      transform: rotate(10deg);
-    }
-    .scroll-button {
-      bottom: 10px; /* Places the button near the bottom */
-      left: 50px; /* Adds padding from the left */
-      padding: 5px 15px;
-      max-width: 300px; /* Limits max width */
-      font-size: 1.4rem;
-    }
-  }
-  @media (min-width: 801px) and (max-width: 1500px) {
-    .tag {
-      font-size: 14px; /* Smaller font size for mobile */
-      padding: 10px 25px; /* Adjusted padding */
-      margin: auto;
-    }
-    .hero {
-      height: 95vh;
-      padding: 2.5vh 5vw; /* Reduced padding for mobile */
-    }
-
-    .img1 { 
-      top: 10px;
-      transform:rotate(-10deg);
-    }
-    .img2 {
-      bottom: 10px;
-      transform: rotate(10deg);
+    .image-glow {
+      width: 140px;
+      height: 250px;
     }
   }
 </style>
