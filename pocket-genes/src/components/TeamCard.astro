@@ -1,5 +1,5 @@
 ---
-const {src, alt, text, description} = Astro.props
+const {src, alt, text, description, skills = []} = Astro.props
 ---
 
 <div class="team-card">
@@ -16,8 +16,9 @@ const {src, alt, text, description} = Astro.props
             <h3 class="member-name">{text}</h3>
             <p class="member-role">{description}</p>
             <div class="member-skills">
-                <span class="skill-tag">Leadership</span>
-                <span class="skill-tag">Innovation</span>
+                {skills.map(skill => (
+                    <span class="skill-tag">{skill}</span>
+                ))}
             </div>
         </div>
     </div>
