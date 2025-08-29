@@ -20,24 +20,26 @@ import Item from "../components/Item.astro";
         Pocket Genes will continuously add new panels and tools to enhance user
         experience and genomic discovery.
       </h3>
-      <div class="features-list">
-        <Item title="Sports & Performance" description="Customized workout plans based on strength, endurance, and recovery traits."/>
-        <Item title="Personality & Behavior" description="Genetic influences on emotions, decision-making addictions and habits."/>
-        <Item title="Physical Traits" description="Explore inherited characteristics like hair, eye color, and skin response."/>
-        <Item title="Cognitive Abilities" description="Uncover learning potential, memory, and problem-solving skills."/>
-        <Item title="Endless Exploration" description="Access extra details on traits, genetic variants, and linked studies for deeper insights."/>
+      <div class="features-container">
+        <div class="features-list">
+          <Item title="Sports & Performance" description="Customized workout plans based on strength, endurance, and recovery traits."/>
+          <Item title="Personality & Behavior" description="Genetic influences on emotions, decision-making addictions and habits."/>
+          <Item title="Physical Traits" description="Explore inherited characteristics like hair, eye color, and skin response."/>
+          <Item title="Cognitive Abilities" description="Uncover learning potential, memory, and problem-solving skills."/>
+          <Item title="Endless Exploration" description="Access extra details on traits, genetic variants, and linked studies for deeper insights."/>
+        </div>
       </div>
     </div>
     <div class="image-wrapper">
       <div class="image_row">
-        <Card src="/more1.png" alt="" text={"Sports & Performance"}/>
-        <Card src="/more2.png" alt="" text={"Personality & Behavior"}/>
-        <Card src="/more3.png" alt="" text={"Physical Traits"}/>
+        <Card src="/more1.png" alt="" text={"Sports &\nPerformance"}/>
+        <Card src="/more2.png" alt="" text={"Personality &\nBehavior"}/>
+        <Card src="/more3.png" alt="" text={"Physical\nTraits"}/>
       </div>
       <div class="image_row">
-          <Card src="/more4.png" alt="" text={"Cognitive & Intelligence"}/>
-          <Card src="/more5.png" alt="" text={"Linked Variants & Studies"}/>
-          <Card src="/more6.png" alt="" text={"Deep Genome Insights"}/>
+          <Card src="/more4.png" alt="" text={"Cognitive &\nIntelligence"}/>
+          <Card src="/more5.png" alt="" text={"Linked Variants &\nStudies"}/>
+          <Card src="/more6.png" alt="" text={"Deep Genome\nInsights"}/>
       </div>
     </div>
   </div>
@@ -52,10 +54,11 @@ import Item from "../components/Item.astro";
       radial-gradient(circle at 25% 25%, rgba(240, 147, 251, 0.12) 0%, transparent 60%),
       radial-gradient(circle at 75% 75%, rgba(103, 126, 234, 0.15) 0%, transparent 60%),
       radial-gradient(circle at 50% 10%, rgba(79, 172, 254, 0.08) 0%, transparent 70%);
-    overflow: hidden;
+    overflow-x: hidden;
     display: flex;
     align-items: center;
     padding: 5rem 5%;
+    box-sizing: border-box;
   }
 
   /* Background Effects */
@@ -131,16 +134,19 @@ import Item from "../components/Item.astro";
     position: relative;
     z-index: 2;
     width: 100%;
+    max-width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
     gap: 5rem;
+    box-sizing: border-box;
   }
 
   .container {
     flex: 1;
     max-width: 45%;
     position: relative;
+    box-sizing: border-box;
   }
 
   .title {
@@ -175,10 +181,20 @@ import Item from "../components/Item.astro";
     font-weight: 400;
   }
 
+  .features-container {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
   .features-list {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .image-wrapper {
@@ -200,6 +216,7 @@ import Item from "../components/Item.astro";
     gap: 1rem;
     width: 100%;
     justify-content: center;
+    align-items: stretch;
   }
 
   /* Responsive Design */
@@ -212,6 +229,8 @@ import Item from "../components/Item.astro";
 
     .container {
       max-width: 100%;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .image-wrapper {
@@ -221,9 +240,11 @@ import Item from "../components/Item.astro";
     }
 
     .image_row {
+      display: flex;
       flex-wrap: wrap;
       gap: 1.5rem;
       justify-content: center;
+      align-items: stretch;
     }
   }
 
@@ -239,17 +260,37 @@ import Item from "../components/Item.astro";
 
   @media (max-width: 768px) {
     .body {
-      padding: 3rem 4%;
+      padding: 3rem 0;
+      box-sizing: border-box;
     }
 
     .content-wrapper {
       gap: 3rem;
+      padding: 0 1.25rem;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    .container {
+      padding: 0;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .features-container {
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      max-width: 100%;
     }
 
     .image_row {
-      flex-direction: column;
-      align-items: center;
-      gap: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      justify-items: center;
+      align-items: start;
     }
 
     .orb-1, .orb-2, .orb-3 {
@@ -263,19 +304,115 @@ import Item from "../components/Item.astro";
 
   @media (max-width: 480px) {
     .body {
-      padding: 2rem 4%;
+      padding: 2rem 0;
+      box-sizing: border-box;
     }
 
     .content-wrapper {
       gap: 2rem;
+      padding: 0 1rem;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    .container {
+      padding: 0;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .features-container {
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .features-list {
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      max-width: 100%;
     }
 
     .image-wrapper {
       gap: 1.5rem;
+      padding: 0;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .image_row {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
     }
 
     .orb-1, .orb-2, .orb-3 {
       opacity: 0.15;
+    }
+  }
+  
+  @media (max-width: 390px) {
+    .body {
+      padding: 1.5rem 0;
+      box-sizing: border-box;
+    }
+
+    .content-wrapper {
+      padding: 0 0.75rem;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    .container {
+      padding: 0;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .features-container {
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .features-list {
+      gap: 0.375rem;
+      width: 100%;
+      max-width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+  }
+  
+  @media (max-width: 375px) {
+    .body {
+      padding: 1.5rem 0;
+    }
+
+    .content-wrapper {
+      padding: 0 0.5rem;
+      box-sizing: border-box;
+    }
+
+    .container {
+      padding: 0;
+    }
+
+    .features-container {
+      padding: 0;
+      margin: 0;
+    }
+
+    .features-list {
+      gap: 0.25rem;
+      padding: 0;
+      margin: 0;
     }
   }
 </style>
